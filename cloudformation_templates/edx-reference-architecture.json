@@ -2726,7 +2726,7 @@
           "mkdir -p /opt/edx/bin\n",
           "cd /opt\n",
           "apt-get update\n",
-          "apt-get install openjdk-6-jre-headless unzip -y\n",
+          "apt-get install openjdk-6-jre-headless unzip -y --force-yes\n",
           "wget http://s3.amazonaws.com/ec2-downloads/ec2-api-tools.zip\n",
           "unzip ec2-api-tools.zip\n",
           "rm ec2-api-tools.zip\n",
@@ -3494,7 +3494,7 @@
           },
           {
             "Key":"services",
-            "Value":"xqueue",
+            "Value":"xqueue,xqueue_consumer",
             "PropagateAtLaunch":true
           },
           {
@@ -4149,7 +4149,13 @@
             "FromPort":"6163",
             "ToPort":"6163",
             "SourceSecurityGroupId": { "Ref": "XqueueServerSecurityGroup" }
-          }
+          },
+          {
+            "IpProtocol":"tcp",
+            "FromPort":"5672",
+            "ToPort":"5672",
+            "SourceSecurityGroupId": { "Ref": "NotifierSecurityGroup" }
+	  }
         ],
         "SecurityGroupEgress":[
           {
