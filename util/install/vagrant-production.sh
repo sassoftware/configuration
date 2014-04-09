@@ -39,4 +39,4 @@ sudo pip install -r requirements.txt
 ##
 ## Run the edx_sandbox.yml playbook in the configuration/playbooks directory
 ##
-cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./edx_sandbox.yml -i "localhost,"
+cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-fullstack.yml -i "localhost," --extra-vars "@../util/install/build-version.yml"
