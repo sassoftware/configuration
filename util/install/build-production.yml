@@ -73,16 +73,16 @@ edxapp_theme_version: master
 edxapp_use_custom_theme: true  # false to disable & use std. theme
 
 #### Specific Overrides for playbooks
-EDXAPP_BUGS_EMAIL: 'mooc@online.northcarolina.edu' 
+EDXAPP_BUGS_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@online.northcarolina.edu'
 EDXAPP_CMS_BASE: 'studio.mooc.northcarolina.edu'
-EDXAPP_CONTACT_EMAIL: 'mooc@online.northcarolina.edu' 
-EDXAPP_DEFAULT_FROM_EMAIL: 'mooc@online.northcarolina.edu' 
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'mooc@online.northcarolina.edu' 
-EDXAPP_DEFAULT_SERVER_EMAIL: 'mooc@online.northcarolina.edu' 
+EDXAPP_CONTACT_EMAIL: 'info@mooc.northcarolina.edu' 
+EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.northcarolina.edu' 
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'info@mooc.northcarolina.edu' 
+EDXAPP_DEFAULT_SERVER_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_LMS_BASE: 'sandbox.mooc.northcarolina.edu'
 EDXAPP_PLATFORM_NAME: 'UNC Online'
-EDXAPP_TECH_SUPPORT_EMAIL: 'mooc@online.northcarolina.edu' 
+EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
 
 ## Production Settings
 #EDXAPP_SITE_NAME: 'sandbox.mooc.northcarolina.edu'
