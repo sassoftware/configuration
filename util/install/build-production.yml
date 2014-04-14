@@ -33,7 +33,7 @@ configuration_version: uncga_production
  
 ## 
 edx_platform_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/edx-platform.git
-edx_platform_commit=uncga_production 
+edx_platform_version: uncga_production 
  
 ##
 xqueue_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/xqueue.git
