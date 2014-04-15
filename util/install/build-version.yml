@@ -81,7 +81,7 @@ edxapp_theme_name: sas
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
 edxapp_theme_version: sas_dev
 edxapp_use_custom_theme: true  # false to disable & use std. theme
-EDXAPP_PLATFORM_NAME: 'UNC Online'
+EDXAPP_PLATFORM_NAME: 'SAS Online'
 #### Specific Overrides for playbooks
  
 EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
