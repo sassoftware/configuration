@@ -63,7 +63,7 @@ discern_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/discern.git
 # discern_version: master
  
 ##
-ora_ease_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ OPEN_EDX }}/ease.git
+ora_ease_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/ease.git
 # ora_ease_version: master
  
 ##
