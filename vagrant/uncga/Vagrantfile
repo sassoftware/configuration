@@ -98,7 +98,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Assume that the base box has the edx_ansible role installed
   # We can then tell the Vagrant instance to update itself.
-  #config.vm.provision "shell", inline: $script1
-  #config.vm.provision "shell", inline: $script
+  config.vm.provision "shell", inline: $script1
+  config.vm.provision "shell", inline: $script
 
 end
