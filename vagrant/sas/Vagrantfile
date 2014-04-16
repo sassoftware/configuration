@@ -55,6 +55,7 @@ edx_platform_mount_dir = "edx-platform"
 forum_mount_dir = "cs_comments_service"
 ora_mount_dir = "ora"
 edx_configuration_dir = "configuration"
+edx_theme_dir = "edx-theme"
 
 if ENV['VAGRANT_MOUNT_BASE']
 
@@ -86,6 +87,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder "#{edx_platform_mount_dir}", "/edx/app/edxapp/edx-platform", :create => true, nfs: true
   config.vm.synced_folder "#{forum_mount_dir}", "/edx/app/forum/cs_comments_service", :create => true, nfs: true
   config.vm.synced_folder "#{ora_mount_dir}", "/edx/app/ora/ora", :create => true, nfs: true
+  config.vm.synced_folder "#{edx_theme_dir}", "/edx/app/edxapp/themes/sas", :create => true, nfs: true
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", MEMORY.to_s]
