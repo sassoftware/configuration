@@ -33,12 +33,12 @@ THEME_ACCT: sassoftware  # Theme repos
   
 ##
 edx_ansible_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/configuration.git
-configuration_version: uncga_dev
+configuration_version: uncga_production
 # configuration_version: 'yarko/build-version'
  
 ## 
 edx_platform_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/edx-platform.git
-edx_platform_version: uncga_dev  
+edx_platform_version: uncga_production  
 #edx_platform_version: yarko/fix-rake-env-assets
  
 ##
@@ -52,23 +52,23 @@ edx_platform_version: uncga_dev
  
 ## 
 forum_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/cs_comments_service.git
-forum_version: uncga_dev
+forum_version: uncga_production
  
 ##
 discern_ease_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/ease.git
-discern_ease_version: uncga_dev
+discern_ease_version: uncga_production
  
 ##
 discern_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/discern.git
-discern_version: uncga_dev
+discern_version: uncga_production
  
 ##
 ora_ease_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/ease.git
-ora_ease_version: uncga_dev
+ora_ease_version: uncga_production
  
 ##
 ora_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/edx-ora.git
-ora_version: uncga_dev
+ora_version: uncga_production
  
 ##
 # Theming selection
