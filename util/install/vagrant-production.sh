@@ -39,5 +39,5 @@ sudo pip install -r requirements.txt
 ##
 ## Run the edx_sandbox.yml playbook in the configuration/playbooks directory
 ##
-cd /var/tmp/configuration/playbooks &&sudo cp ../util/install/build-production.yml /edx/app/edx_ansible/server-vars.yml
 cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-fullstack.yml -i "localhost," --extra-vars "@../util/install/build-production.yml"
+cd /var/tmp/configuration/playbooks &&sudo cp ../util/install/build-production.yml /edx/app/edx_ansible/server-vars.yml
