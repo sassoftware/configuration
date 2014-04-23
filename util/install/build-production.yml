@@ -91,6 +91,14 @@ ENABLE_INSTRUCTOR_EMAIL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false
 studio_request_email: 'info@mooc.northcarolina.edu'
+EDXAPP_MKTG_URL_LINK_MAP:
+    ABOUT: "about"
+    CONTACT: "contact"
+    HONOR: "honor"
+    JOBS: "jobs"
+    TOS: "tos"
+    PRESS: "press"
+    PRIVACY: "privacy"
 
 
 ## Production Settings
