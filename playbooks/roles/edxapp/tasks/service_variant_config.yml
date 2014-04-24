@@ -84,11 +84,12 @@
 - name: syncdb and migrate
   shell: >
     chdir={{ edxapp_code_dir }}
-    {{ edxapp_venv_bin}}/python manage.py lms syncdb --migrate --noinput --settings=aws_migrate
+    {{ edxapp_venv_bin}}/python manage.py {{ item }} syncdb --migrate --noinput --settings=aws_migrate
   when: fake_migrations is defined and migrate_db is defined and migrate_db|lower == "yes"
   sudo_user: "{{ edxapp_user }}"
   environment:
     DB_MIGRATION_NAME: "{{ EDXAPP_TEST_MIGRATE_DB_NAME }}"
+  with_items: service_variants_enabled
   notify:
   - "restart edxapp"
   - "restart edxapp_workers"
@@ -97,12 +98,13 @@
 - name: syncdb and migrate
   shell: >
     chdir={{ edxapp_code_dir }}
-    {{ edxapp_venv_bin}}/python manage.py lms syncdb --migrate --noinput --settings=aws_migrate
+    {{ edxapp_venv_bin}}/python manage.py {{ item }} syncdb --migrate --noinput --settings=aws_migrate
   when: fake_migrations is not defined and migrate_db is defined and migrate_db|lower == "yes" and COMMON_MYSQL_MIGRATE_PASS
   environment:
     DB_MIGRATION_USER: "{{ COMMON_MYSQL_MIGRATE_USER }}"
     DB_MIGRATION_PASS: "{{ COMMON_MYSQL_MIGRATE_PASS }}"
   sudo_user: "{{ edxapp_user }}"
+  with_items: service_variants_enabled
   notify:
   - "restart edxapp"
   - "restart edxapp_workers"
@@ -112,12 +114,13 @@
 - name: syncdb and migrate
   shell: >
     chdir={{ edxapp_code_dir }}
-    {{ edxapp_venv_bin}}/python manage.py lms syncdb --migrate --noinput --settings=aws_migrate
+    {{ edxapp_venv_bin}}/python manage.py {{ item }} syncdb --migrate --noinput --settings=aws_migrate
   when: fake_migrations is not defined and migrate_db is defined and migrate_db|lower == "yes" and not COMMON_MYSQL_MIGRATE_PASS
   environment:
     DB_MIGRATION_USER: "{{ EDXAPP_MYSQL_USER_MIGRATE }}"
     DB_MIGRATION_PASS: "{{ EDXAPP_MYSQL_PASSWORD_MIGRATE }}"
   sudo_user: "{{ edxapp_user }}"
+  with_items: service_variants_enabled
   notify:
   - "restart edxapp"
   - "restart edxapp_workers"
@@ -129,11 +132,12 @@
 - name: db migrate
   shell: >
     chdir={{ edxapp_code_dir }}
-    {{ edxapp_venv_bin}}/python manage.py lms migrate --noinput --settings=aws_migrate
+    {{ edxapp_venv_bin}}/python manage.py {{ item }} migrate --noinput --settings=aws_migrate
   when: fake_migrations is defined and migrate_only is defined and migrate_only|lower == "yes"
   sudo_user: "{{ edxapp_user }}"
   environment:
     DB_MIGRATION_NAME: "{{ EDXAPP_TEST_MIGRATE_DB_NAME }}"
+  with_items: service_variants_enabled
   notify:
   - "restart edxapp"
   - "restart edxapp_workers"
@@ -144,12 +148,13 @@
 - name: db migrate
   shell: >
     chdir={{ edxapp_code_dir }}
-    {{ edxapp_venv_bin}}/python manage.py lms migrate --noinput --settings=aws_migrate
+    {{ edxapp_venv_bin}}/python manage.py {{ item }} migrate --noinput --settings=aws_migrate
   when: fake_migrations is not defined and migrate_only is defined and migrate_only|lower == "yes"
   environment:
     DB_MIGRATION_USER: "{{ EDXAPP_MYSQL_USER_MIGRATE }}"
     DB_MIGRATION_PASS: "{{ EDXAPP_MYSQL_PASSWORD_MIGRATE }}"
   sudo_user: "{{ edxapp_user }}"
+  with_items: service_variants_enabled
   notify:
   - "restart edxapp"
   - "restart edxapp_workers"
