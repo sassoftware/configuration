@@ -79,14 +79,27 @@ EDXAPP_CMS_BASE: 'studio.mooc.northcarolina.edu'
 EDXAPP_CONTACT_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'info@mooc.northcarolina.edu' 
+EDXAPP_FEEDBACK_SUBMISSION_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_DEFAULT_SERVER_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_LMS_BASE: 'sandbox.mooc.northcarolina.edu'
 EDXAPP_PLATFORM_NAME: 'UNC Online'
 EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
+EDXAPP_PREVIEW_LMS_BASE: 'preview.mooc.northcarolina.edu'
+DISABLE_COURSE_CREATION: false
+ENABLE_CREATOR_GROUP: true
+ENABLE_INSTRUCTOR_EMAIL: true
+ENABLE_MKTG_SITE: false
+REQUIRE_COURSE_EMAIL_AUTH: false
+studio_request_email: 'info@mooc.northcarolina.edu'
+
 
 ## Production Settings
 EDXAPP_SITE_NAME: 'sandbox.mooc.northcarolina.edu'
-EDXAPP_LMS_PREVIEW_NGINX_PORT=443
-EDXAPP_CMS_NGINX_PORT=443
-EDXAPP_LMS_NGINX_PORT=443
+NGINX_SSL_CERTIFICATE: '/var/tmp/ssl/server.crt'
+NGINX_SSL_KEY: '/var/tmp/ssl/server.key'
+NGINX_ENABLE_SSL: true
+EDXAPP_LMS_NGINX_PORT: 80
+EDXAPP_LMS_SSL_NGINX_PORT: 443
+EDXAPP_CMS_NGINX_PORT: 80
+EDXAPP_CMS_SSL_NGINX_PORT: 443
 
