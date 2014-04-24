@@ -43,7 +43,7 @@ EDXAPP_MYSQL_PORT: '3306'
 
 EDXAPP_EMAIL_BACKEND: 'django.core.mail.backends.smtp.EmailBackend'
 
-EDXAPP_LOG_LEVEL: 'INFO'
+EDXAPP_LOG_LEVEL: 'WARN'
 
 EDXAPP_MEMCACHE: [ 'localhost:11211' ]
 EDXAPP_COMMENTS_SERVICE_URL:  'http://localhost:18080'
