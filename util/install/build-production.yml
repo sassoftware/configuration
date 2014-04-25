@@ -85,12 +85,12 @@ EDXAPP_LMS_BASE: 'sandbox.mooc.northcarolina.edu'
 EDXAPP_PLATFORM_NAME: 'UNC Online'
 EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_PREVIEW_LMS_BASE: 'preview.mooc.northcarolina.edu'
-DISABLE_COURSE_CREATION: false
-ENABLE_CREATOR_GROUP: true
-ENABLE_INSTRUCTOR_EMAIL: true
+EDXAPP_DISABLE_COURSE_CREATION: false
+EDXAPP_ENABLE_CREATOR_GROUP: true
+EDXAPP_ENABLE_INSTRUCTOR_EMAIL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false
-studio_request_email: 'info@mooc.northcarolina.edu'
+STUDIO_REQUEST_EMAIL: 'info@mooc.northcarolina.edu'
 
 
 ## Production Settings
