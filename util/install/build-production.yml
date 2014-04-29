@@ -73,24 +73,25 @@ edxapp_theme_version: sas_dev
 edxapp_use_custom_theme: true  # false to disable & use std. theme
 
 #### Specific Overrides for playbooks
-EDXAPP_BUGS_EMAIL: 'david.cabana@sas.com' 
+EDXAPP_BUGS_EMAIL: 'edusasadmin@mooc.sas.com' 
 EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@mooc.sas.com'
 EDXAPP_CMS_BASE: 'studio.mooc.sas.com'
 EDXAPP_CMS_PREFIX: 'sbstudio'
-EDXAPP_CONTACT_EMAIL: 'david.cabana@sas.com' 
+EDXAPP_CONTACT_EMAIL: 'edusasadmin@mooc.sas.com' 
 EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.sas.com' 
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'david.cabana@sas.com' 
-EDXAPP_DEFAULT_SERVER_EMAIL: 'david.cabana@sas.com' 
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_SERVER_EMAIL: 'edusasadmin@mooc.sas.com' 
 EDXAPP_LMS_BASE: 'sbpreview.mooc.sas.com'
 EDXAPP_PLATFORM_NAME: 'SAS Online'
-EDXAPP_TECH_SUPPORT_EMAIL: 'david.cabana@sas.com' 
+EDXAPP_TECH_SUPPORT_EMAIL: 'edusasadmin@mooc.sas.com' 
 EDXAPP_DISABLE_COURSE_CREATION: false
 EDXAPP_ENABLE_CREATOR_GROUP: true
 EDXAPP_ENABLE_INSTRUCTOR_EMAIL: true
-EDXAPP_STUDIO_REQUEST_EMAIL: 'david.cabana@sas.com'
+EDXAPP_STUDIO_REQUEST_EMAIL: 'edusasadmin@mooc.sas.com'
 EDXAPP_ENABLE_DISCUSSION_HOME_PANEL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false
+
 
 ## Production Settings
 EDXAPP_SITE_NAME: 'sbpreview.mooc.sas.com'
