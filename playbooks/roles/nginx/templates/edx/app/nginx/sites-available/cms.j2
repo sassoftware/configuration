@@ -28,7 +28,7 @@ server {
   {% endif %}
 
 
-  server_name ~^((stage|prod)-)?studio\..*;
+  server_name ~^((stage|prod)-)?{{EDXAPP_CMS_PREFIX}}\..*;
 
   access_log {{ nginx_log_dir }}/access.log;
   error_log {{ nginx_log_dir }}/error.log error;

@@ -76,6 +76,7 @@ edxapp_use_custom_theme: true  # false to disable & use std. theme
 EDXAPP_BUGS_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@online.northcarolina.edu'
 EDXAPP_CMS_BASE: 'studio.mooc.northcarolina.edu'
+EDXAPP_CMS_PREFIX: 'studio'
 EDXAPP_CONTACT_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.northcarolina.edu' 
 EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'info@mooc.northcarolina.edu' 
@@ -88,9 +89,11 @@ EDXAPP_PREVIEW_LMS_BASE: 'preview.mooc.northcarolina.edu'
 EDXAPP_DISABLE_COURSE_CREATION: false
 EDXAPP_ENABLE_CREATOR_GROUP: true
 EDXAPP_ENABLE_INSTRUCTOR_EMAIL: true
+EDXAPP_STUDIO_REQUEST_EMAIL: 'info@mooc.northcarolina.edu'
+EDXAPP_ENABLE_DISCUSSION_HOME_PANEL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false
-STUDIO_REQUEST_EMAIL: 'info@mooc.northcarolina.edu'
+
 
 
 ## Production Settings
