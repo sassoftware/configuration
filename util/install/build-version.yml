@@ -79,7 +79,7 @@ ora_version: uncga_production
 edxapp_theme_name: uncga
 #edxapp_theme_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ THEME_ACCT }}/edx-theme.git
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
-edxapp_theme_version: master
+edxapp_theme_version: uncga_production
 edxapp_use_custom_theme: true  # false to disable & use std. theme
 EDXAPP_PLATFORM_NAME: 'UNC Online'
 #### Specific Overrides for playbooks
