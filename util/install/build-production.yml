@@ -94,7 +94,7 @@ REQUIRE_COURSE_EMAIL_AUTH: false
 
 ## Production Settings
 EDXAPP_SITE_NAME: 'sbpreview.mooc.sas.com'
-NGINX_SSL_CERTIFICATE: '/var/tmp/ssl/server.crt'
+NGINX_SSL_CERTIFICATE: '/var/tmp/ssl/server.pem'
 NGINX_SSL_KEY: '/var/tmp/ssl/server.key'
 NGINX_ENABLE_SSL: true
 EDXAPP_LMS_NGINX_PORT: 80
