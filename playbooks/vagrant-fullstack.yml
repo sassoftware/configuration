@@ -21,7 +21,6 @@
       - xqueue
       nginx_default_sites:
       - lms
-      - cms
     - edxlocal
     - mongo
     - { role: 'edxapp', celery_worker: True }
