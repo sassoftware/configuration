@@ -1,0 +1,17 @@
+{
+    "COOKIE_SECRET": "{{badgekit_server_COOKIE_SECRET}}",
+    "PORT": "{{badgekit_server_port}}",
+    "OPENBADGER_SYSTEM": "badgekit",
+    "OPENBADGER_URL": "http://{{badgekit_system_url}}:{{badgekit_api_server_PORT}}",
+    "OPENBADGER_SECRET": "{{badgekit_server_MASTER_SECRET}}",
+    "DATABASE_DRIVER": "mysql",
+    "DATABASE_HOST": "{{badgekit_server_DB_HOST}}",
+    "DATABASE_USER": "{{edxapp_db_root_user}}",
+    "DATABASE_PASSWORD": "{{db_root_pass}}",
+    "DATABASE_DATABASE": "{{badgekit_server_mysqldb}}",
+    "PERSONA_AUDIENCE": "http://{{badgekit_system_url}}:{{badgekit_server_port}}",
+    "API_SECRET": "{{badgekit_server_API_SECRET}}",
+    "ACCESS_LIST": [
+        "^{{badgekit_server_admin}}$"
+    ]
+}

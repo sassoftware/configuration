@@ -1,0 +1,28 @@
+---
+#
+#
+#
+
+badgekit_user: "badgekit"
+badgekit_system: "badgekit"
+badgekit_system_url: "localhost"
+badgekit_server_admin: "ray.hooker@sas.com"
+badgekit_app_dir: "{{ COMMON_DATA_DIR }}/badgekit/"
+badgekit_server_repo: "https://github.com/rayhooker/openbadges-badgekit.git"
+badgekit_server_dir: "{{ COMMON_DATA_DIR }}/badgekit/openbadges"
+badgekit_server_version: "master"
+badgekit_server_mysqldb: "badgekit"
+badgekit_server_DB_HOST: "localhost" 
+badgekit_server_MASTER_SECRET: "yoursecret" 
+badgekit_server_COOKIE_SECRET: "agoodsecret" 
+badgekit_server_API_SECRET: "jj54a590432qjj"
+badgekit_server_port: 3000 
+badgekit_server_NGINX_PORT: "18080"
+badgekit_supervisor_wrapper: "{{ badgekit_server_dir }}/badgekit-supervisor.sh"
+badgekit_api_server_repo: "https://github.com/rayhooker/badgekit-api.git"
+badgekit_api_server_dir: "{{ COMMON_DATA_DIR }}/badgekit/badgeit-api"
+badgekit_api_server_version: "master"
+badgekit_api_server_mysqldb: "badgekitapi" 
+badgekit_api_server_PORT: 8080
+badgekit_api_server_NGINX_PORT: "18080"
+badgekit_api_supervisor_wrapper: "{{ badgekit_api_server_dir }}/badgekit_api-supervisor.sh"

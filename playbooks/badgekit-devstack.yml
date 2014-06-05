@@ -1,0 +1,34 @@
+- name: Configure instance(s)
+  hosts: all
+  sudo: True
+  gather_facts: True
+  vars:
+    migrate_db: "yes"
+    openid_workaround: True
+    devstack: True
+    disable_edx_services: False
+    edx_platform_version: 'master'
+    COMMON_DATA_DIR: "/edx/app"
+    common_web_user: "www-data"
+    common_web_group: "www-data"
+    edxapp_db_root_user: "root" 
+    db_root_pass: ""
+    supervisor_service_user: "{{ common_web_user }}"
+    supervisor_user: supervisor
+    supervisor_log_dir: "/edx/var/log/supervisor"
+    supervisor_app_dir: "/edx/app/supervisor"
+    supervisor_cfg: "{{ supervisor_app_dir }}/supervisord.conf"
+    supervisor_cfg_dir: "{{ supervisor_app_dir }}/conf.d"
+    supervisor_available_dir: "{{ supervisor_app_dir }}/conf.available.d"
+    supervisor_venvs_dir: "{{ supervisor_app_dir }}/venvs"
+    supervisor_venv_dir: "{{ supervisor_venvs_dir }}/supervisor"
+    supervisor_venv_bin: "{{ supervisor_venv_dir }}/bin"
+    supervisor_ctl: "{{ supervisor_venv_bin }}/supervisorctl"
+    EDXAPP_MYSQL_USER: "root"
+    mongo_enable_journal: False
+    EDXAPP_NO_PREREQ_INSTALL: 0
+    COMMON_MOTD_TEMPLATE: "devstack_motd.tail.j2"
+  vars_files:
+    - "group_vars/all"
+  roles:
+    - badgekit

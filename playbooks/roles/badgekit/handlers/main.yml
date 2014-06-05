@@ -1,0 +1,20 @@
+---
+- name: restart badgekit
+  supervisorctl_local: >
+    name=badgekit
+    supervisorctl_path={{ supervisor_ctl }}
+    config={{ supervisor_cfg }}
+    state=restarted
+  when: badgekit_installed is defined and not disable_edx_services
+  sudo_user: "{{ supervisor_service_user }}"
+
+- name: restart badgekitapi
+  supervisorctl_local: >
+    name=badgekitapi
+    supervisorctl_path={{ supervisor_ctl }}
+    config={{ supervisor_cfg }}
+    state=restarted
+  when: badgekit_api_installed is defined and not disable_edx_services
+  sudo_user: "{{ supervisor_service_user }}" 
+
+
