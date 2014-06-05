@@ -1,0 +1,63 @@
+---
+
+- name: create the supervisor config for badgekit server
+  template: >
+    src=badgekit.conf.j2 dest={{ supervisor_available_dir }}/badgekit.conf
+    owner={{ supervisor_user }}
+    group={{ supervisor_user }}
+    mode=0644
+  sudo_user: "{{ supervisor_user }}"
+  register: badgekit_supervisor
+
+- name: enable the supervisor config for badgekit server
+  file: >
+    src={{ supervisor_available_dir }}/badgekit.conf
+    dest={{ supervisor_cfg_dir }}/badgekit.conf
+    owner={{ supervisor_user }}
+    state=link
+    force=yes
+    mode=0644
+  sudo_user: "{{ supervisor_user }}"
+  when: not disable_edx_services
+  register: badgekit_supervisor
+
+- name: create the supervisor wrapper for badgekit server
+  template: >
+    src={{ badgekit_supervisor_wrapper|basename }}.j2
+    dest={{ badgekit_supervisor_wrapper }}
+    mode=0755
+  sudo_user: "{{ badgekit_user }}"
+  notify: restart the badgekit service
+
+- set_fact: badgekit_installed=true
+
+- name: create the supervisor config for badgekit api server
+  template: >
+    src=badgekit_api.conf.j2 dest={{ supervisor_available_dir }}/badgekit_api.conf
+    owner={{ supervisor_user }}
+    group={{ supervisor_user }}
+    mode=0644
+  sudo_user: "{{ supervisor_user }}"
+  register: badgekit_api_supervisor
+
+- name: enable the supervisor config for badgekit api server
+  file: >
+    src={{ supervisor_available_dir }}/badgekit_api.conf
+    dest={{ supervisor_cfg_dir }}/badgekit_api.conf
+    owner={{ supervisor_user }}
+    state=link
+    force=yes
+    mode=0644
+  sudo_user: "{{ supervisor_user }}"
+  when: not disable_edx_services
+  register: badgekit_api_supervisor
+
+- name: create the supervisor wrapper for badgekit api server
+  template: >
+    src={{ badgekit_api_supervisor_wrapper|basename }}.j2
+    dest={{ badgekit_api_supervisor_wrapper }}
+    mode=0755
+  sudo_user: "{{ badgekit_user }}"
+  notify: restart the badgekit api service
+
+- set_fact: badgekit_api_installed=true

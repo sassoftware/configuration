@@ -1,0 +1,60 @@
+---
+
+- name: create application user
+  user: >
+    name="{{ badgekit_user }}" home="{{ badgekit_app_dir }}"
+    createhome=no shell=/bin/false
+
+# Do A Checkout
+- name: checkout badgekit_server repo into {{badgekit_server_dir}}
+  git: dest={{badgekit_server_dir}} repo={{badgekit_server_repo}} version={{badgekit_server_version}}
+  register: chkout
+  sudo_user: "{{ badgekit_user }}"
+  environment:
+    GIT_SSH: "{{ edxapp_git_ssh }}"
+
+# Do A Checkout
+- name: checkout badgekit_api_server repo into {{badgekit_api_server_dir}}
+  git: dest={{badgekit_api_server_dir}} repo={{badgekit_api_server_repo}} version={{badgekit_api_server_version}}
+  register: chkout
+  sudo_user: "{{ badgekit_user }}"
+  environment:
+    GIT_SSH: "{{ edxapp_git_ssh }}"
+
+- name: Do nmp install for openbadges
+  sudo_user: "{{ badgekit_user }}"
+  npm: path={{badgekit_server_dir}} state=present
+
+- name: Do nmp install for badgekit_api_server
+  sudo_user: "{{ badgekit_user }}"
+  npm: path={{badgekit_api_server_dir}} state=present
+
+- name: Create Badgekit_api Database
+  mysql_db: name={{badgekit_api_server_mysqldb}} state=present login_host=""{{ EDXAPP_MYSQL_HOST|default('None') }}"" login_user="{{ edxapp_db_root_user }}" login_password="{{ db_root_pass }}"
+
+- name: Create database for Openbadges server
+  mysql_db: name={{badgekit_server_mysqldb}} state=present login_host="{{ EDXAPP_MYSQL_HOST|default('None') }}"login_user="{{ edxapp_db_root_user }}" login_password="{{ db_root_pass }}"
+
+- name: setup the Badgekit_api_server_ env
+  template: >
+    src=badgekit_api_env.j2 dest=badgekit_app_dir/.env
+    owner={{ badgekit_user }}  group={{ common_web_user }}
+    mode=0644
+
+- name: setup the Openbadges_server config.json
+  template: >
+    src=badgekit_server_config.j2 dest=badgekit_server_dir/config.json
+    owner={{ badgekit_user }}  group={{ common_web_user }}
+    mode=0644
+
+- name: DB Migration for Badgekit_api
+  command: {{badgekit_api_server_dir}}/bin/db-migrate up
+  notify: restart the badgekitapi service
+
+- name: DB Migration for Openbadges_server
+  command: {{badgekit_server_dir}}/bin/db-migrate up
+  notify: restart the badgekit service
+
+  - include: deploy.yml tags=deploy
+
+
