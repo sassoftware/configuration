@@ -34,7 +34,7 @@
 
 - name: create the supervisor config for badgekit server
   template: >
-    src=badgekit.supervisord.conf.j2 dest={{ supervisor_available_dir }}/badgekit.conf
+    src=badgekit_server.supervisord.conf.j2 dest={{ supervisor_available_dir }}/badgekit.conf
     owner={{ supervisor_user }}
     group={{ supervisor_user }}
     mode=0644
