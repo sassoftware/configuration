@@ -1,13 +1,13 @@
 ---
 
 - name: Add Package for Upgrading NodeJS on Ubuntu 12.04
-  apt: name: python-software-properties  state=latest
+  apt: name=python-software-properties  state=latest
 
 - name: Add Repository Upgrading NodeJS on Ubuntu 12.04
   apt_repository: repo='ppa:chris-lea/node.js'
 
 - name: Upgrade NodeJS on Ubuntu 12.04
-  apt: name: nodejs update_cache=yes state=latest 
+  apt: name=nodejs update_cache=yes state=latest 
 
 - name: create application user
   user: >
