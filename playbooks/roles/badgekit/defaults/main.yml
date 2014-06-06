@@ -23,6 +23,6 @@ badgekit_api_server_repo: "https://github.com/rayhooker/badgekit-api.git"
 badgekit_api_server_dir: "{{ COMMON_DATA_DIR }}/badgekit/badgeit-api"
 badgekit_api_server_version: "master"
 badgekit_api_server_mysqldb: "badgekitapi" 
-badgekit_api_server_PORT: 8080
+badgekit_api_server_PORT: 9080
 badgekit_api_server_NGINX_PORT: "18080"
 badgekit_api_supervisor_wrapper: "{{ badgekit_api_server_dir }}/badgekit_api-supervisor.sh"
