@@ -13,7 +13,7 @@
   user: >
     name="{{ badgekit_user }}" home="{{ badgekit_app_dir }}"
     createhome=no shell=/bin/false
-
+ 
 - name: create badgekit user dirs
   file: >
     path="{{ item }}" state=directory
