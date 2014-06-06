@@ -1,4 +1,4 @@
-ansible==1.7
+ansible==1.6.2
 PyYAML==3.10
 Jinja2==2.7.2
 MarkupSafe==0.18
