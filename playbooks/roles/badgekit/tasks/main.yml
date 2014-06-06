@@ -1,5 +1,9 @@
 ---
-
+- name: create application user
+  user: >
+    name="{{ badgekit_user }}" home="{{ badgekit_app_dir }}"
+    createhome=no shell=/bin/false
+    
 - name: create badgekit user dirs
   file: >
     path="{{ item }}" state=directory
@@ -8,11 +12,6 @@
     - "{{ badgekit_app_dir }}"
     - "{{ badgekit_server_dir }}"
     - "{{ badgekit_api_server_dir }}" 
-
-- name: create application user
-  user: >
-    name="{{ badgekit_user }}" home="{{ badgekit_app_dir }}"
-    createhome=no shell=/bin/false
 
 # Do A Checkout
 - name: checkout badgekit_server repo into {{badgekit_server_dir}}
