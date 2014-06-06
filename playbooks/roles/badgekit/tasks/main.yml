@@ -14,7 +14,6 @@
     name="{{ badgekit_user }}" home="{{ badgekit_app_dir }}"
     createhome=no shell=/bin/false
 
-
 # Do A Checkout
 - name: checkout badgekit_server repo into {{badgekit_server_dir}}
   git: dest={{badgekit_server_dir}} repo={{badgekit_server_repo}} version={{badgekit_server_version}}
@@ -61,7 +60,7 @@
     mode=0644
 
 - name: setup the Openbadges_server config.json
-  template: >
+  template: > 
     src=badgekit_server.config.j2 dest={{badgekit_server_dir}}/config.json
     owner={{ badgekit_user }}  group={{ common_web_user }}
     mode=0644
@@ -73,6 +72,7 @@
 - name: DB Migration for Openbadges_server
   command: bin/db-migrate up chdir={{badgekit_server_dir}} 
   notify: restart badgekit
+
 - include: deploy.yml tags=deploy
 
 
