@@ -88,6 +88,9 @@
     src="{{ devpi_supervisor_venv_bin }}/supervisorctl"
     dest={{ COMMON_BIN_DIR }}/{{ item }}.devpi
     state=link
+  with_items:
+  - python
+  - pip
 
 - name: create a symlink for supervisor config
   file: >
