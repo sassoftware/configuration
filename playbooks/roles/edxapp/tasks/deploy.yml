@@ -67,7 +67,7 @@
   - "restart edxapp_workers"
 
 - name: NPM Install grunt-cli Needed for theme compile
-  npm: name=grunt-cli
+  npm: name=grunt-cli  global=yes
   when: edxapp_theme_name != ''
   sudo_user: "{{ edxapp_user }}"
   notify:
@@ -75,7 +75,7 @@
   - "restart edxapp_workers"  
 
 - name: NPM Install bower Needed for theme compile
-  npm: name=bower
+  npm: name=bower  global=yes
   when: edxapp_theme_name != ''
   sudo_user: "{{ edxapp_user }}"
   notify:
