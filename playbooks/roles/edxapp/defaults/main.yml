@@ -614,8 +614,7 @@ edxapp_debian_pkgs:
   - apparmor-utils
   # misc
   - curl
-  - ipython
-  - npm
+  - ipython 
   - ntp
   # for shapely
   - libgeos-dev
