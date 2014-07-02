@@ -59,7 +59,7 @@
   - "restart edxapp_workers"
 
 - name: NPM Install for theme
-  npm: path={{ edxapp_app_dir }}/themes/{{edxapp_theme_name}}
+  npm: path={{ edxapp_app_dir }}/themes/{{edxapp_theme_name}} state=latest
   when: edxapp_theme_name != ''
   sudo_user: "{{ edxapp_user }}"
   notify:
@@ -85,7 +85,7 @@
 - name: Do Grunt build for theme
   shell: grunt build
   args:
-    chdir: {{ edxapp_app_dir }}/themes/{{edxapp_theme_name}}
+    chdir: "{{ edxapp_app_dir }}/themes/{{edxapp_theme_name}}"
   when: edxapp_theme_name != ''
   sudo_user: "{{ edxapp_user }}"
   notify:
