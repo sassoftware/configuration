@@ -22,6 +22,11 @@ fi
 sudo apt-get install -y build-essential software-properties-common python-software-properties curl git-core libxml2-dev libxslt1-dev python-pip python-apt python-dev
 sudo pip install --upgrade pip
 sudo pip install --upgrade virtualenv
+sudo apt-get update
+sudo apt-get install -y python-software-properties python g++ make
+sudo add-apt-repository -y ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 
 ##
 ## Clone the configuration repository and run Ansible
