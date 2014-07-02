@@ -58,6 +58,40 @@
   - "restart edxapp"
   - "restart edxapp_workers"
 
+- name: NPM Install for theme
+  npm: path={{ edxapp_app_dir }}/themes/{{edxapp_theme_name}}
+  when: edxapp_theme_name != ''
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"  
+  - "restart edxapp_workers"
+
+- name: NPM Install grunt-cli Needed for theme compile
+  npm: name=grunt-cli
+  when: edxapp_theme_name != ''
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"  
+  - "restart edxapp_workers"  
+
+- name: NPM Install bower Needed for theme compile
+  npm: name=bower
+  when: edxapp_theme_name != ''
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"  
+  - "restart edxapp_workers"  
+
+- name: Do Grunt build for theme
+  shell: grunt build
+  args:
+    chdir: {{ edxapp_app_dir }}/themes/{{edxapp_theme_name}}
+  when: edxapp_theme_name != ''
+  sudo_user: "{{ edxapp_user }}"
+  notify:
+  - "restart edxapp"  
+  - "restart edxapp_workers"
+
 - name: create checksum for requirements, package.json and Gemfile
   shell: >
     /usr/bin/md5sum {{ " ".join(edxapp_chksum_req_files) }} 2>/dev/null > /var/tmp/edxapp.req.new
