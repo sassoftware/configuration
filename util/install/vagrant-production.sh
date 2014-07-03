@@ -32,7 +32,7 @@ sudo apt-get install nodejs
 ## Clone the configuration repository and run Ansible
 ##
 cd /var/tmp
-git clone -b uncga_production https://github.com/sassoftware/configuration
+git clone -b uncga_newtheme https://github.com/sassoftware/configuration
 
 ##
 ## Install the ansible requirements

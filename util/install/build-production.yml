@@ -29,11 +29,11 @@ COMMON_GIT_MIRROR: 'github.com'
  
 ## 
 edx_ansible_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/configuration.git
-configuration_version: uncga_production
+configuration_version: uncga_newtheme
  
 ## 
 edx_platform_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/edx-platform.git
-edx_platform_version: uncga_production
+edx_platform_version: uncga_newtheme
  
 ##
 xqueue_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/xqueue.git
@@ -46,7 +46,7 @@ xqueue_version: HEAD
  
 ## 
 forum_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/cs_comments_service.git
-forum_version: uncga_production
+forum_version: uncga_newtheme
  
 ##
 discern_ease_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/ease.git
@@ -69,7 +69,7 @@ ora_version: uncga_production
 #  - fork and develop your theme;
 edxapp_theme_name: uncga 
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
-edxapp_theme_version: uncga_production
+edxapp_theme_version: uncga_newtheme
 edxapp_use_custom_theme: true  # false to disable & use std. theme
 
 #### Specific Overrides for playbooks
