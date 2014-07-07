@@ -33,7 +33,7 @@ THEME_ACCT: sassoftware  # Theme repos
   
 ##
 edx_ansible_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/configuration.git
-configuration_version: uncga_newtheme
+configuration_version: sas_newtheme
 # configuration_version: 'yarko/build-version'
  
 ## 
