@@ -24,7 +24,11 @@
       - xqueue
       - certs
       nginx_default_sites:
+<<<<<<< HEAD
       - lms 
+=======
+      - lms
+>>>>>>> origin/sas_dev
     - edxlocal
     - mongo
     - { role: 'edxapp', celery_worker: True }

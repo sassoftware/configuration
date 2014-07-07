@@ -29,7 +29,7 @@ COMMON_GIT_MIRROR: 'github.com'
  
 ## 
 edx_ansible_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/configuration.git
-configuration_version: uncga_newtheme
+configuration_version: sas_newtheme
  
 ## 
 edx_platform_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/edx-platform.git
@@ -67,42 +67,37 @@ ora_version: uncga_production
 ##
 # Theming selection 
 #  - fork and develop your theme;
-edxapp_theme_name: uncga 
+edxapp_theme_name: sas 
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
-edxapp_theme_version: uncga_newtheme
+edxapp_theme_version: sas_newtheme
 edxapp_use_custom_theme: true  # false to disable & use std. theme
 
 #### Specific Overrides for playbooks
-EDXAPP_BUGS_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@online.northcarolina.edu'
-EDXAPP_CMS_BASE: 'studio.mooc.northcarolina.edu'
-EDXAPP_CMS_PREFIX: 'studio'
-EDXAPP_CONTACT_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_FEEDBACK_SUBMISSION_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_SERVER_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_LMS_BASE: 'sandbox.mooc.northcarolina.edu'
-EDXAPP_PLATFORM_NAME: 'UNC Online'
-EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_PREVIEW_LMS_BASE: 'preview.mooc.northcarolina.edu'
+EDXAPP_BUGS_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@mooc.sas.com'
+EDXAPP_CMS_BASE: 'studio.mooc.sas.com'
+EDXAPP_CMS_PREFIX: 'sbstudio'
+EDXAPP_CONTACT_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.sas.com' 
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_SERVER_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_LMS_BASE: 'sbpreview.mooc.sas.com'
+EDXAPP_PLATFORM_NAME: 'SAS Online'
+EDXAPP_TECH_SUPPORT_EMAIL: 'edusasadmin@mooc.sas.com' 
 EDXAPP_DISABLE_COURSE_CREATION: false
 EDXAPP_ENABLE_CREATOR_GROUP: true
 EDXAPP_ENABLE_INSTRUCTOR_EMAIL: true
-EDXAPP_STUDIO_REQUEST_EMAIL: 'info@mooc.northcarolina.edu'
+EDXAPP_STUDIO_REQUEST_EMAIL: 'edusasadmin@mooc.sas.com'
 EDXAPP_ENABLE_DISCUSSION_HOME_PANEL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false
 
-
-
 ## Production Settings
-EDXAPP_SITE_NAME: 'sandbox.mooc.northcarolina.edu'
-NGINX_SSL_CERTIFICATE: '/var/tmp/ssl/server.crt'
+EDXAPP_SITE_NAME: 'sbpreview.mooc.sas.com'
+NGINX_SSL_CERTIFICATE: '/var/tmp/ssl/server.pem'
 NGINX_SSL_KEY: '/var/tmp/ssl/server.key'
 NGINX_ENABLE_SSL: true
 EDXAPP_LMS_NGINX_PORT: 80
 EDXAPP_LMS_SSL_NGINX_PORT: 443
 EDXAPP_CMS_NGINX_PORT: 80
 EDXAPP_CMS_SSL_NGINX_PORT: 443
-

@@ -76,25 +76,25 @@ ora_version: uncga_production
 #  - bring up the standard edx theme;
 #  - bring up a canonically Stanford themed edx;
 #  - fork and develop your theme;
-edxapp_theme_name: uncga
+edxapp_theme_name: sas
 #edxapp_theme_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ THEME_ACCT }}/edx-theme.git
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
-edxapp_theme_version: uncga_newtheme
+edxapp_theme_version: sas_newtheme
 edxapp_use_custom_theme: true  # false to disable & use std. theme
-EDXAPP_PLATFORM_NAME: 'UNC Online'
+EDXAPP_PLATFORM_NAME: 'SAS Online'
 #### Specific Overrides for playbooks
  
-EDXAPP_TECH_SUPPORT_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_CONTACT_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_BUGS_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_FROM_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'info@mooc.northcarolina.edu' 
-EDXAPP_DEFAULT_SERVER_EMAIL: 'info@mooc.northcarolina.edu'
-EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@online.northcarolina.edu'
-EDXAPP_CMS_BASE: 'studio.mooc.northcarolina.edu'
+EDXAPP_TECH_SUPPORT_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_CONTACT_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_BUGS_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_FROM_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_FEEDBACK_EMAIL: 'edusasadmin@mooc.sas.com' 
+EDXAPP_DEFAULT_SERVER_EMAIL: 'edusasadmin@mooc.sas.com'
+EDXAPP_BULK_EMAIL_DEFAULT_FROM_EMAIL: 'no-reply@mooc.sas.com'
+EDXAPP_CMS_BASE: 'studio.mooc.sas.com'
 EDXAPP_ENABLE_CREATOR_GROUP: true
 EDXAPP_ENABLE_INSTRUCTOR_EMAIL: true 
-EDXAPP_STUDIO_REQUEST_EMAIL: 'info@mooc.northcarolina.edu'
+EDXAPP_STUDIO_REQUEST_EMAIL: 'info@mooc.sas.com'
 EDXAPP_ENABLE_DISCUSSION_HOME_PANEL: true
 ENABLE_MKTG_SITE: false
 REQUIRE_COURSE_EMAIL_AUTH: false

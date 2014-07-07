@@ -32,7 +32,7 @@ sudo apt-get install nodejs
 ## Clone the configuration repository and run Ansible
 ##
 cd /var/tmp
-git clone -b uncga_newtheme https://github.com/sassoftware/configuration
+git clone -b sas_newtheme https://github.com/sassoftware/configuration
 
 ##
 ## Install the ansible requirements
@@ -44,5 +44,6 @@ sudo pip install -r requirements.txt
 ## Run the edx_sandbox.yml playbook in the configuration/playbooks directory
 ##
 
+sudo mkdir -p /edx/app/edx_ansible/
 cd /var/tmp/configuration/playbooks && sudo ansible-playbook -c local ./vagrant-fullstack.yml -i "localhost," --extra-vars "@../util/install/build-production.yml"
 cd /var/tmp/configuration/playbooks &&sudo cp ../util/install/build-production.yml /edx/app/edx_ansible/server-vars.yml
