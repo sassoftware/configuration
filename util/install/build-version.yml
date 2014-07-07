@@ -52,6 +52,10 @@ edx_platform_version: uncga_newtheme
  
 ## 
 forum_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/cs_comments_service.git
+forum_version: uncga_development
+ 
+## 
+forum_source_repo: https://{{ COMMON_GIT_MIRROR }}/{{ GIT_ACCT }}/cs_comments_service.git
 forum_version: uncga_newtheme
  
 ##
