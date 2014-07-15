@@ -71,6 +71,7 @@ edxapp_theme_name: sas
 edxapp_theme_source_repo: https://github.com/sassoftware/edx-theme.git
 edxapp_theme_version: sas_newtheme
 edxapp_use_custom_theme: true  # false to disable & use std. theme
+COMMON_ENABLE_BASIC_AUTH: False
 
 #### Specific Overrides for playbooks
 EDXAPP_BUGS_EMAIL: 'edusasadmin@mooc.sas.com' 
