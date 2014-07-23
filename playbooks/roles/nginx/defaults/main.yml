@@ -1,6 +1,8 @@
 # Variables for nginx role
 ---
 NGINX_ENABLE_SSL: False
+NGINX_RESTRICT_DJANGO_ADMIN: False
+NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK: "149.273.0.0/16"
 # Set these to real paths on your
 # filesystem, otherwise nginx will
 # use a self-signed snake-oil cert
