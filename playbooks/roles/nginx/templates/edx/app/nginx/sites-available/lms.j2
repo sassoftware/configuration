@@ -10,6 +10,14 @@ upstream lms-backend {
     {% endfor %}
 }
 
+{% if NGINX_ENABLE_SSL %}
+server {
+  listen 80 default;
+  rewrite ^ https://$host$request_uri? permanent;
+} 
+{% endif %}
+
+
 server {
   # LMS configuration file for nginx, templated by ansible
 
@@ -90,17 +98,16 @@ server {
         try_files /staticfiles/$collected /course_static/$collected =404;
     }
 
+    {% if NGINX_ENABLE_SSL %}
+    location ~ ^/admin/ {
+        allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
+        allow 127.0.0.1;
+        deny all;
+    }
+    {% endif %}
+
     # Expire other static files immediately (there should be very few / none of these)
     expires epoch;
   }
 
-  # Forward to HTTPS if we're an HTTP request...
-  if ($http_x_forwarded_proto = "http") {
-    set $do_redirect "true";
-  }
-
-  # Run our actual redirect...
-  if ($do_redirect = "true") {
-    rewrite ^ https://$host$request_uri? permanent;
-  }
 }
