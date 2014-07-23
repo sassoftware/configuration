@@ -22,8 +22,7 @@ server {
   # LMS configuration file for nginx, templated by ansible
 
   {% if NGINX_ENABLE_SSL %}
-
-  listen {{EDXAPP_LMS_NGINX_PORT}} {{default_site}};
+ 
   listen {{EDXAPP_LMS_SSL_NGINX_PORT}} {{default_site}} ssl;
 
   ssl_certificate /etc/ssl/certs/{{ NGINX_SSL_CERTIFICATE|basename }};
