@@ -105,11 +105,11 @@ server {
 
 {% if NGINX_RESTRICT_DJANGO_ADMIN %}
   
-location ~ ^/admin/ {
+    location ~ ^/admin/ {
       allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
       allow 127.0.0.1;
       deny all;
-}
+    }
 {% endif %}
 
     # Expire other static files immediately (there should be very few / none of these)
