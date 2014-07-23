@@ -103,13 +103,14 @@ server {
         try_files /staticfiles/$collected /course_static/$collected =404;
     }
 
-    {% if NGINX_ENABLE_SSL %}
+{% if NGINX_RESTRICT_DJANGO_ADMIN %}
+  
     location ~ ^/admin/ {
-        allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
-        allow 127.0.0.1;
-        deny all;
+      allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
+      allow 127.0.0.1;
+      deny all;
     }
-    {% endif %}
+{% endif %}
 
     # Expire other static files immediately (there should be very few / none of these)
     expires epoch;
