@@ -104,6 +104,7 @@ server {
     }
 
     {% if NGINX_ENABLE_SSL %}
+
     location ~ ^/admin/ {
         allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
         allow 127.0.0.1;
