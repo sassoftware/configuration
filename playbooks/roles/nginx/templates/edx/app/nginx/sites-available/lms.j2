@@ -103,8 +103,8 @@ server {
         try_files /staticfiles/$collected /course_static/$collected =404;
     }
 
-    {% if NGINX_ENABLE_SSL %}
-       
+    {% if NGINX_RESTRICT_DJANGO_ADMIN %}
+     
     location ~ ^/admin/ {
         allow {{NGINX_AUTHORIZED_DJANGO_ADMIN_NETWORK}};
         allow 127.0.0.1;
